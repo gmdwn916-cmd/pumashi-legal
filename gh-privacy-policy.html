@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>개인정보처리방침 | 품앗이</title>
+<style>
+  :root {
+    --paper: #f6f7f4;
+    --paper-raised: #ffffff;
+    --ink: #1e2620;
+    --muted: #5b6961;
+    --accent: #1f5c4f;
+    --accent-soft: #e3eee9;
+    --line: #dde3de;
+    color-scheme: light dark;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --paper: #12160f;
+      --paper-raised: #191f19;
+      --ink: #e7ece7;
+      --muted: #93a199;
+      --accent: #6fc2a8;
+      --accent-soft: #1d2b24;
+      --line: #293029;
+    }
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: "Pretendard Variable", "Apple SD Gothic Neo", "Malgun Gothic", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 24px;
+    border-bottom: 1px solid var(--line);
+  }
+  .wordmark {
+    font-weight: 700;
+    font-size: 0.95rem;
+    letter-spacing: 0.01em;
+    color: var(--ink);
+    text-decoration: none;
+  }
+  .wordmark span {
+    color: var(--accent);
+  }
+  .doctype-tag {
+    font-family: ui-monospace, "SF Mono", "Cascadia Mono", Consolas, monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--muted);
+    border: 1px solid var(--line);
+    border-radius: 100px;
+    padding: 4px 10px;
+  }
+
+  main {
+    max-width: 44rem;
+    margin: 0 auto;
+    padding: 56px 24px 96px;
+  }
+
+  .doc-header {
+    margin-bottom: 40px;
+  }
+  .eyebrow {
+    font-family: ui-monospace, "SF Mono", "Cascadia Mono", Consolas, monospace;
+    font-size: 0.78rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin: 0 0 10px;
+  }
+  h1 {
+    font-size: clamp(1.7rem, 4vw, 2.15rem);
+    line-height: 1.3;
+    margin: 0 0 14px;
+    text-wrap: balance;
+    letter-spacing: -0.01em;
+  }
+  .meta-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: ui-monospace, "SF Mono", "Cascadia Mono", Consolas, monospace;
+    font-size: 0.82rem;
+    color: var(--muted);
+    background: var(--accent-soft);
+    border-radius: 8px;
+    padding: 6px 12px;
+  }
+  .meta-chip strong {
+    color: var(--ink);
+    font-weight: 600;
+  }
+
+  .intro {
+    margin-top: 24px;
+    font-size: 1.02rem;
+    line-height: 1.75;
+    color: var(--ink);
+    max-width: 62ch;
+  }
+
+  nav.toc {
+    margin: 36px 0 8px;
+    padding: 18px 20px;
+    background: var(--paper-raised);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+  }
+  nav.toc p {
+    margin: 0 0 10px;
+    font-size: 0.78rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+  nav.toc ol {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 6px 16px;
+  }
+  nav.toc a {
+    display: block;
+    font-size: 0.9rem;
+    color: var(--ink);
+    text-decoration: none;
+    padding: 4px 0;
+    border-bottom: 1px solid transparent;
+  }
+  nav.toc a:hover, nav.toc a:focus-visible {
+    color: var(--accent);
+    border-bottom-color: var(--accent);
+  }
+
+  article {
+    margin-top: 48px;
+  }
+  section {
+    padding: 30px 0;
+    border-top: 1px solid var(--line);
+    scroll-margin-top: 24px;
+  }
+  section:first-of-type {
+    border-top: none;
+    padding-top: 8px;
+  }
+  .section-head {
+    display: flex;
+    align-items: baseline;
+    gap: 14px;
+    margin-bottom: 14px;
+  }
+  .section-num {
+    font-family: ui-monospace, "SF Mono", "Cascadia Mono", Consolas, monospace;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--accent);
+    background: var(--accent-soft);
+    border-radius: 6px;
+    padding: 2px 8px;
+    flex-shrink: 0;
+  }
+  h2 {
+    font-size: 1.12rem;
+    font-weight: 700;
+    margin: 0;
+    letter-spacing: -0.005em;
+  }
+  h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    margin: 1.4em 0 0.5em;
+  }
+  p, li {
+    font-size: 0.98rem;
+    line-height: 1.75;
+    color: var(--ink);
+    max-width: 66ch;
+  }
+  p { margin: 0.9em 0; }
+  ul, ol.body-list { padding-left: 1.3em; margin: 0.8em 0; }
+  li { margin-bottom: 8px; }
+  li > ul { margin-top: 8px; }
+  strong { font-weight: 700; color: var(--ink); }
+  .muted { color: var(--muted); }
+
+  footer {
+    margin-top: 64px;
+    padding-top: 24px;
+    border-top: 1px solid var(--line);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 20px;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 0.85rem;
+    color: var(--muted);
+  }
+  footer a { color: var(--accent); text-decoration: none; }
+  footer a:hover { text-decoration: underline; }
+
+  @media (prefers-reduced-motion: no-preference) {
+    main { animation: rise 0.5s ease-out both; }
+  }
+  @keyframes rise {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @media (max-width: 520px) {
+    main { padding: 40px 18px 72px; }
+    nav.toc ol { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <a class="wordmark" href="#top">품<span>앗</span>이</a>
+  <span class="doctype-tag">Privacy Policy</span>
+</div>
+
+<main id="top">
+  <div class="doc-header">
+    <p class="eyebrow">개인정보 처리 안내</p>
+    <h1>개인정보처리방침</h1>
+    <span class="meta-chip">시행일 <strong>2026. 8. 3.</strong></span>
+    <p class="intro">품앗이(이하 "서비스")는 이용자의 개인정보를 중요하게 생각하며, 「개인정보 보호법」 등 관련 법령을 준수합니다. 본 방침은 서비스가 어떤 개인정보를 수집·이용·보관하는지 안내합니다.</p>
+  </div>
+
+  <nav class="toc" aria-label="목차">
+    <p>목차</p>
+    <ol>
+      <li><a href="#s1">1. 수집하는 개인정보 항목</a></li>
+      <li><a href="#s2">2. 개인정보의 이용 목적</a></li>
+      <li><a href="#s3">3. 개인정보의 제3자 제공</a></li>
+      <li><a href="#s4">4. 보관 및 이용 기간</a></li>
+      <li><a href="#s5">5. 이용자의 권리</a></li>
+      <li><a href="#s6">6. 안전성 확보 조치</a></li>
+      <li><a href="#s7">7. 광고 및 수익모델</a></li>
+      <li><a href="#s8">8. 문의처</a></li>
+      <li><a href="#s9">9. 방침의 변경</a></li>
+    </ol>
+  </nav>
+
+  <article>
+    <section id="s1">
+      <div class="section-head"><span class="section-num">01</span><h2>수집하는 개인정보 항목</h2></div>
+      <h3>1) 회원가입 시 (Google 로그인)</h3>
+      <ul>
+        <li>이메일 주소, 이름, 프로필 사진 (Google 계정에서 제공하는 기본 프로필 정보)</li>
+        <li>별도의 비밀번호, 전화번호, 주소 등은 수집하지 않습니다.</li>
+      </ul>
+      <h3>2) 서비스 이용 중 자동 생성되는 정보</h3>
+      <ul>
+        <li>등록한 앱 정보 (앱 이름, 패키지명, 비공개 테스트 참여 링크, 짧은 설명, 아이콘 등 — Google Play Developer API를 통해 앱 소유자 본인의 Play Console 정보에서 가져옵니다)</li>
+        <li>매칭 이력, 완주 횟수, 테스트 진행 상태</li>
+        <li>테스트 과정에서 작성한 피드백 텍스트</li>
+      </ul>
+    </section>
+
+    <section id="s2">
+      <div class="section-head"><span class="section-num">02</span><h2>개인정보의 이용 목적</h2></div>
+      <ul>
+        <li>서비스 회원 식별 및 로그인</li>
+        <li>비공개 테스트 상호 매칭 (매칭 상대방에게 서비스 이용을 위해 필요한 최소 범위의 정보를 노출)</li>
+        <li>매칭된 개발자가 상대방을 자신의 Google Play 비공개 테스트 트랙에 테스터로 등록할 수 있도록, <strong>매칭이 성사된 경우에 한해 상대방의 이메일 주소를 해당 앱 소유자에게만 제공</strong>합니다.</li>
+        <li>서비스 품질 개선, 부정 이용(무응답·탈주 등) 방지</li>
+      </ul>
+    </section>
+
+    <section id="s3">
+      <div class="section-head"><span class="section-num">03</span><h2>개인정보의 제3자 제공</h2></div>
+      <ul>
+        <li>서비스는 원칙적으로 이용자의 개인정보를 외부에 제공하지 않습니다.</li>
+        <li>예외적으로, <strong>매칭이 성사된 경우</strong> 그 상대방(테스트 대상 앱의 소유자)에게 이메일 주소가 제공됩니다. 이는 Google Play 비공개 테스트 참여를 위해 반드시 필요한 최소한의 정보이며, 매칭되지 않은 이용자에게는 어떠한 정보도 노출되지 않습니다.</li>
+        <li>법령에 근거가 있거나 수사기관의 적법한 요청이 있는 경우를 제외하고, 그 외 목적으로 개인정보를 제3자에게 제공하지 않습니다.</li>
+      </ul>
+    </section>
+
+    <section id="s4">
+      <div class="section-head"><span class="section-num">04</span><h2>개인정보의 보관 및 이용 기간</h2></div>
+      <ul>
+        <li>회원 탈퇴 시, 계정 식별정보(이메일, 로그인 정보)는 즉시 삭제 또는 재로그인이 불가능하도록 비활성화됩니다.</li>
+        <li>다만, 매칭 상대방이 남긴 <strong>피드백 텍스트와 완주 기록</strong>은 상대방의 정당한 이용(프로덕션 심사 자료 등)을 위해 계속 보관될 수 있으며, 이 경우 탈퇴한 이용자를 식별할 수 있는 정보(이름, 이메일 등)는 삭제·익명 처리됩니다.</li>
+      </ul>
+    </section>
+
+    <section id="s5">
+      <div class="section-head"><span class="section-num">05</span><h2>이용자의 권리</h2></div>
+      <ul>
+        <li>이용자는 언제든지 설정 화면에서 회원 탈퇴를 요청할 수 있으며, 이는 개인정보 삭제 요청으로 처리됩니다.</li>
+        <li>탈퇴 시 진행 중인 모든 테스트는 종료 처리되며, 이는 탈퇴 전 반드시 확인 안내됩니다.</li>
+      </ul>
+    </section>
+
+    <section id="s6">
+      <div class="section-head"><span class="section-num">06</span><h2>개인정보의 안전성 확보 조치</h2></div>
+      <p>서비스는 Supabase(데이터베이스)와 Google 계정 인증 시스템을 통해 개인정보를 관리하며, 접근 권한 통제(Row Level Security) 등 기술적 조치를 적용하고 있습니다.</p>
+    </section>
+
+    <section id="s7">
+      <div class="section-head"><span class="section-num">07</span><h2>광고 및 수익모델</h2></div>
+      <p>현재 서비스는 별도의 광고를 운영하지 않습니다. 향후 광고가 도입될 경우, 본 방침을 개정하여 사전에 고지합니다.</p>
+    </section>
+
+    <section id="s8">
+      <div class="section-head"><span class="section-num">08</span><h2>문의처</h2></div>
+      <p>개인정보 관련 문의는 서비스 내 "고객센터" 메뉴를 이용해주시기 바라며, 그 외 문의는 아래 이메일로 연락해주시기 바랍니다.</p>
+      <ul>
+        <li>이메일: <a href="mailto:gmdwn916@gmail.com" style="color:var(--accent)">gmdwn916@gmail.com</a></li>
+      </ul>
+    </section>
+
+    <section id="s9">
+      <div class="section-head"><span class="section-num">09</span><h2>방침의 변경</h2></div>
+      <p>본 방침은 법령, 서비스 정책 변경에 따라 수정될 수 있으며, 변경 시 서비스 내 공지사항을 통해 안내합니다.</p>
+    </section>
+  </article>
+
+  <footer>
+    <span>© 2026 품앗이</span>
+    <span class="muted">문의: <a href="mailto:gmdwn916@gmail.com">gmdwn916@gmail.com</a></span>
+  </footer>
+</main>
+</body>
+</html>
